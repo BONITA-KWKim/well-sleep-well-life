@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">well-sleep-well-life</string>
+
+    <string name="user_name">Hi, kyungwon.KIM</string>
+    <string name="user_greeting">It\'s wonderful day!!</string>
+    <string name="user_photo_desc">representive image</string>
+
 </resources>
