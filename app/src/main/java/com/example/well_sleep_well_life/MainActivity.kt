@@ -8,9 +8,10 @@ import com.github.mikephil.charting.animation.Easing
 import com.github.mikephil.charting.charts.BarChart
 import com.github.mikephil.charting.charts.LineChart
 import com.github.mikephil.charting.components.Description
+import com.github.mikephil.charting.components.Legend
 import com.github.mikephil.charting.components.XAxis
-import com.github.mikephil.charting.data.*
 import com.github.mikephil.charting.components.YAxis
+import com.github.mikephil.charting.data.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -23,7 +24,11 @@ class MainActivity : AppCompatActivity() {
 
         /* User space */
 
+        //setLineChart()
+        setBarChart()
+    }
 
+    private fun setLineChart() {
         /* Line graph test */
         lineChart = findViewById(R.id.line_chart) as LineChart
 
@@ -62,15 +67,17 @@ class MainActivity : AppCompatActivity() {
         yRAxis.setDrawAxisLine(false)
         yRAxis.setDrawGridLines(false)
 
-        val description = Description()
-        description.setText("description")
+        val lineDesc = Description()
+        lineDesc.text = "description"
 
         lineChart!!.setDoubleTapToZoomEnabled(false)
         lineChart!!.setDrawGridBackground(false)
-        lineChart!!.setDescription(description)
+        lineChart!!.description = lineDesc
         lineChart!!.animateY(2000, Easing.EasingOption.EaseInCubic)
         lineChart!!.invalidate()
+    }
 
+    private fun setBarChart() {
         /* bar graph test */
         barChart = findViewById(R.id.bar_chart) as BarChart
 
@@ -91,15 +98,32 @@ class MainActivity : AppCompatActivity() {
             }
         }
         */
-        val barLabel = ArrayList<String>()
-        barLabel.add("Test1")
-        barLabel.add("Test2")
-        barLabel.add("Test3")
-        barLabel.add("Test4")
-        barLabel.add("Test5")
+
+        /*
+        val l = barChart!!.legend
+        l.setVerticalAlignment(Legend.LegendVerticalAlignment.BOTTOM)
+        l.setHorizontalAlignment(Legend.LegendHorizontalAlignment.LEFT)
+        l.setOrientation(Legend.LegendOrientation.HORIZONTAL)
+        l.setDrawInside(false)
+        l.setForm(Legend.LegendForm.SQUARE)
+        l.setFormSize(9.0f)
+        l.setTextSize(11.0f)
+        l.setXEntrySpace(4.0f)
+        */
+
+        val barLabels = ArrayList<String>()
+        barLabels.add("Test1")
+        barLabels.add("Test2")
+        barLabels.add("Test3")
+        barLabels.add("Test4")
+        barLabels.add("Test5")
+
+        val barDesc = Description()
+        barDesc.text = "bar chart example"
 
         val barData = BarData(barDataSet)
-        barChart!!.setData(barData)
+        barChart!!.data = barData
+        barChart!!.description = barDesc
         barChart!!.animateXY(1000, 1000)
         barChart!!.invalidate()
     }

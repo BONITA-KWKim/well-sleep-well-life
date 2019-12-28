@@ -36,20 +36,22 @@
                 <TextView
                     android:id="@+id/textView"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/user_name" />
+                    android:layout_height="50dp"
+                    android:text="@string/user_name"
+                    android:textSize="25sp" />
 
                 <TextView
                     android:id="@+id/textView2"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/user_greeting" />
+                    android:layout_height="50dp"
+                    android:text="@string/user_greeting"
+                    android:textSize="25sp"/>
             </LinearLayout>
         </LinearLayout>
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="400dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -59,7 +61,7 @@
                 <com.github.mikephil.charting.charts.LineChart
                     android:id="@+id/line_chart"
                     android:layout_width="match_parent"
-                    android:layout_height="400dp" />
+                    android:layout_height="match_parent" />
 
                 <com.github.mikephil.charting.charts.BarChart
                     android:id="@+id/bar_chart"
@@ -67,6 +69,19 @@
                     android:layout_height="400dp" />
             </LinearLayout>
         </ScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Alarm space"
+                android:textSize="25sp"/>
+        </LinearLayout>
 
     </LinearLayout>
 
